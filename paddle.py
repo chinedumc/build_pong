@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-class Paddle:
+class Paddle(Turtle):
   def __init__(self, position):
     super().__init__()
     # paddle = Turtle()
