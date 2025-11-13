@@ -7,7 +7,7 @@ from paddle import Paddle
 
 screen = Screen()
 screen.bgcolor('black')
-screen.setup(width=800, height=800)
+screen.setup(width=800, height=600)
 screen.title('Pong')
 screen.tracer(0)
 
@@ -27,6 +27,12 @@ while game_is_on:
   time.sleep(0.1) #To see the ball move in it's track
   screen.update()
   ball.move()
+
+  # Detect collision with wall
+  if ball.ycor() > 280 or ball.ycor() < - 280:
+    ball.bounce()
+
+
 
 
 screen.exitonclick()
